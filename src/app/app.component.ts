@@ -43,6 +43,9 @@ export class AppComponent implements AfterContentInit {
 
   public onEvent(e: ScannerQRCodeResult[]): void {
     console.log(e);
+    if (e.length > 0) {
+      this.action.pause();
+    }
   }
 
   public handle(action: any, fn: string): void {
